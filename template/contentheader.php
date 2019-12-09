@@ -4,9 +4,8 @@
         <small>segalanya dimulai disini</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Examples</a></li>
-        <li class="active">Blank page</li>
+       
+        <li class="active"> <i class="active">Blank page</i></li>
       </ol>
     </section>
 
