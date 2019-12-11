@@ -24,7 +24,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active">
-          <a href="../beranda/index.php">
+          <a href="http://localhost/belajarGit/beranda/index.php">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
            
           </a>
