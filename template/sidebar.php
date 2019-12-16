@@ -41,7 +41,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="../template/Adminlte2/index.html"><i class="fa fa-circle-o"></i> tamabah post</a></li>
-            <li><a href="../post/index.php"><i class="fa fa-circle-o"></i> beranda post</a></li>
+            <li><a href="http://localhost/belajarGit/post/index.php"><i class="fa fa-circle-o"></i> beranda post</a></li>
           </ul>
         </li>
 

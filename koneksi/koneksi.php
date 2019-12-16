@@ -6,6 +6,4 @@
 
  $konek =mysqli_connect($server,$usr,$pass,$dbname);
 
- if(!konek){
- 		die(mysqli_connect_error()."koneksi gagal!");		
- }
+ 

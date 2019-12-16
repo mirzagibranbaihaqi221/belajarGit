@@ -35,11 +35,10 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Tambah User
-        <small>it all starts here</small>
+        Edit User
       </h1>
       <ol class="breadcrumb">
-        <li><a href="../beranda/index.php"><i class="fa fa-home"></i> Beranda</a></li>
+        <li><a href="http://localhost/belajarGit/beranda/index.php"><i class="fa fa-home"></i> Beranda</a></li>
         <li><a href="indexuser.php"><i class="fa fa-user"></i> User</a></li>
         <li class="active"><i class="fa fa-plus"></i>Tambah User</li>
       </ol>
@@ -51,13 +50,17 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <h3 class="box-title">Akun Login User</h3>
+              <h3 class="box-title"> Edit Akun User</h3>
 
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-               <form role="form" method="post" action="proses_create.php">
+                <?php include'../koneksi/koneksi.php'; 
+                  $ID = $_GET['id'];
+                ?>
+               <form role="form" method="POST" action="proces_edit.php">
               <div class="box-body">
+                <input type="hidden" name="id" value="<?= $ID ?>">
                 <div class="form-group">
                   <label for="name">Nama</label>
                   <input type="text" class="form-control" id="name" placeholder="Masukan Nama" name="name">
@@ -84,7 +87,7 @@
               <!-- /.box-body -->
 
               <div class="box-footer">
-                <a href="indexuser.php" class="btn btn-xs btn-primary"><i class="fa fa-arrow-left"></i>Kembali</a>
+                <a href="http://localhost/belajarGit/user/indexuser.php" class="btn btn-xs btn-primary"><i class="fa fa-arrow-left"></i>Kembali</a>
                 <button type="submit" class="btn btn-xs btn-primary">Submit</button>
               </div>
             </form>
