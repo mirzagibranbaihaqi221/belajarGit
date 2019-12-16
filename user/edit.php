@@ -57,22 +57,26 @@
             <div class="box-body">
                 <?php include'../koneksi/koneksi.php'; 
                   $ID = $_GET['id'];
+                  $sql ="SELECT * FROM users WHERE id='$ID'";
+                  $result = mysqli_query($konek,$sql);
+                  $row    =mysqli_fetch_assoc($result);
+
                 ?>
                <form role="form" method="POST" action="proces_edit.php">
               <div class="box-body">
                 <input type="hidden" name="id" value="<?= $ID ?>">
                 <div class="form-group">
                   <label for="name">Nama</label>
-                  <input type="text" class="form-control" id="name" placeholder="Masukan Nama" name="name">
+                  <input type="text" class="form-control" value="<?php echo $row['name'] ?>" id="name" placeholder="Masukan Nama" name="name">
                 </div>
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Masukan Email" name="email">
+                  <input type="email" class="form-control" value="<?php echo $row['email']?>" id="email" placeholder="Masukan Email" name="email">
                 </div>
 
                 <div class="form-group">
                   <label for="pass">Password</label>
-                  <input type="Password" class="form-control" id="pass" placeholder="Masukan Password" name="password">
+                  <input type="Password" class="form-control" value="" id="pass" placeholder="Masukan Password" name="password">
                 </div>
                <!--  <div class="form-group">
                   <label for="exampleInputFile">File input</label>
