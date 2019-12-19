@@ -35,12 +35,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-         Post
+        Tambah POST
         <small>it all starts here</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="http://localhost/belajarGit/beranda/index.php"><i class="fa fa-home"></i>beranda</a></li>
-        <li class="active"><i class="fa fa-user"></i>User</li>
+        <li><a href="../beranda/index.php"><i class="fa fa-home"></i> Beranda</a></li>
+        <li><a href="indexuser.php"><i class="fa fa-user"></i> User</a></li>
+        <li class="active"><i class="fa fa-plus"></i>Tambah Post</li>
       </ol>
     </section>
 
@@ -50,46 +51,46 @@
       <!-- Default box -->
       <div class="box">
             <div class="box-header with-border">
-              <a href="tambah.php" class="btn btn-xs btn-primary"><i class="fa fa-plus"></i>Tambah</a>
+              <h3 class="box-title">Tambah Post</h3>
+
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <table class="table table-bordered">
-                <tr>
-                  <th style="width: 10px">No</th>
-                  <th>Author</th>
-                  <th>Title</th>
-                  <th>Content</th>
-                  <th>Status</th>
-                  <th>Action</th>
-                </tr>
-                  <?php
-                    include '../koneksi/koneksi.php';
-                    $nomor =1;
-                    $sql   ="select * from post";
-                    $results =mysqli_query($konek,$sql);
-                    if (mysqli_num_rows($results)>0){
-                      while ($row = mysqli_fetch_assoc($results)) {
-                        
-                        echo"<tr>
-                          <td>".$nomor++."</td>
-                          <td>".$row['author']."</td>
-                          <td>".$row['title']."</td>
-                          <td>".$row['content']."</td>
-                          <td>".(($row['status'])?'publish':'draft')."</td>
-                          <td>
-                            <a href='edit.php?id=".$row['id']."' class='btn btn-xs btn-primary'>Edit</a>
-                            <a href='delete.php?id=".$row['id']."' class='btn btn-xs btn-danger' onclick='javascript:return confirm(\"anda serius ingin menghapus data ini\")'>Hapus</a>
-                          </td>
+               <form role="form" method="post" action="proses_tambah.php">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="author">Author</label>
+                  <input type="text" class="form-control" id="author" placeholder="Masukan Nama" name="author">
+                </div>
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input type="text" class="form-control" id="title" placeholder="Masukan title" name="title">
+                </div>
 
-                        </tr>";
-                      }
-                    }
-                  ?>
-              </table>
+                <div class="form-group">
+                  <label for="content">Content</label><br>
+                 <textarea  rows="3" cols="70" name="content"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="status">Status</label>
+                  <input type="checkbox" id="status" value="1" name="status">publish
+                  <input type="checkbox" name="status" id="status" value="0" >draft
+                </div>
+               
+                  </label>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <a href="index.php" class="btn btn-xs btn-primary"><i class="fa fa-arrow-left"></i>Kembali</a>
+                <button type="submit" class="btn btn-xs btn-primary">Submit</button>
+              </div>
+            </form>
             </div>
             <!-- /.box-body -->
-           
+
           </div>
       <!-- /.box -->
 
